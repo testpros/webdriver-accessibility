@@ -2,12 +2,14 @@ package com.accessibility.examples.junit.webdriver.test;
 
 import com.accessibility.AccessibilityScanner;
 import com.accessibility.Result;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import javax.imageio.ImageIO;
@@ -30,7 +32,8 @@ public class WebDriverJunitTest {
     @Test
     public void simpleWebDriverAccessibilityTest() throws IOException {
 
-        WebDriver driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().forceCache().setup();
+        WebDriver driver = new ChromeDriver();
         driver.get("http://www.netflix.com");
 
         AccessibilityScanner scanner = new AccessibilityScanner(driver);
@@ -57,7 +60,7 @@ public class WebDriverJunitTest {
                     .get("screenshot");
             log.warn("Writing screenshot ");
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(screenshot));
-            ImageIO.write(img, "png", new File("src/test/resources/accessibility-screenshot-report.png"));
+            ImageIO.write(img, "png", new File("target/accessibility-screenshot-report.png"));
         }
         driver.quit();
     }
