@@ -2,13 +2,11 @@ package com.accessibility.examples.junit.webdriver.test;
 
 import com.accessibility.AccessibilityScanner;
 import com.accessibility.Result;
-import org.apache.commons.io.FileUtils;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.junit.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -17,9 +15,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.assertThat;
 
 /**
  * Created by nikulkarni on 7/16/16.
@@ -30,7 +25,8 @@ public class WebDriverJunitTest {
     @Test
     public void simpleWebDriverAccessibilityTest() throws IOException {
 
-        WebDriver driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().forceCache().setup();
+        WebDriver driver = new ChromeDriver();
         driver.get("http://www.netflix.com");
 
         AccessibilityScanner scanner = new AccessibilityScanner(driver);
@@ -57,7 +53,7 @@ public class WebDriverJunitTest {
                     .get("screenshot");
             log.warn("Writing screenshot ");
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(screenshot));
-            ImageIO.write(img, "png", new File("src/test/resources/accessibility-screenshot-report.png"));
+            ImageIO.write(img, "png", new File("target/accessibility-screenshot-report.png"));
         }
         driver.quit();
     }
