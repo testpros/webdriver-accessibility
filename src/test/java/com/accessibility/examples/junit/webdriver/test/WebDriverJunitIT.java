@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Created by nikulkarni on 7/16/16.
  */
-public class WebDriverJunitTest {
+public class WebDriverJunitIT {
 
 
     @Test
@@ -31,7 +31,7 @@ public class WebDriverJunitTest {
 
         AccessibilityScanner scanner = new AccessibilityScanner(driver);
         Map<String, Object> audit_report = scanner.runAccessibilityAudit();
-        Logger log = Logger.getLogger(WebDriverJunitTest.class);
+        Logger log = Logger.getLogger(WebDriverJunitIT.class);
         if (audit_report.containsKey("plain_report")) {
             log.warn(audit_report.get("plain_report").toString());
         }
