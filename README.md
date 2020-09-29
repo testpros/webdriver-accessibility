@@ -100,20 +100,9 @@ Issues
 ======
 Please provide necessary details to reproduce the issue and open them as appropriate
 
-Contact
-=======
-Twitter: [@nileshdk] [4]
-
-Email: nilesh.cric@gmail.com
-
-Update As of July 18, 2016
-=======================
-I have had very little time to spend on this project recently, but I'm planning to be more active now. Also looking for more contributors
-
 [1]: https://code.google.com/p/selenium/wiki/GettingStarted "selenium webdriver"
 [2]: https://github.com/GoogleChrome/accessibility-developer-tools "GoogleChrome accessibility-developer-tools"
 [3]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules "GoogleChrome accessibility-developer-tools audit rules"
-[4]: https://twitter.com/nileshdk "@nileshdk"
 [5]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_01--controls-and-media-elements-should-have-labels "missing label rule"
 [6]: https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules#-ax_text_02--images-should-have-an-alt-attribute-unless-they-have-an-aria-role-of-presentation "missing ALT attribute rule"
 
