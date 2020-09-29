@@ -3,15 +3,13 @@ webdriver-accessibility
 
 Ever wanted to do accessibility scanning in your WebDriver tests in Java? webdriver-accessibility is a Java tool that helps you run accessibility audits using [selenium webdriver][1] and [GoogleChrome accessibility-developer-tools][2]. It relies on [GoogleChrome accessibility-developer-tools][2] to run the audit. Once the audit is run, the tool returns a meaningful Java object which can be used for reporting later. The tool also takes a screenshot of your webpage and marks errors & warnings. Currently errors are bordered with red and warnings with yellow. This project is decoupled from Webdriver project in the sense that user would need to pass along a WebDriver object. 
 
-As of today, this library is not published in maven repo, so you would need to clone this project and  deploy locally by running `mvn clean install` or deploy a snapshot in your own repository like `mvn clean -B deploy`. Currently there is an [open issue](https://github.com/nikulkarni/webdriver-accessibility/issues/4) to fix this.
-
-Once the library is available in your local/internal maven repository, please add dependency like,
+To start using the tool, add dependency like the below (if using Maven), but any built tool can work
 
 ```
 <dependency>
    <groupId>com.accessibility</groupId>
    <artifactId>webdriver-accessibility</artifactId>
-   <version>1.1.0-SNAPSHOT</version>
+   <version>1.2.0</version>
 </dependency>
 ```
 
