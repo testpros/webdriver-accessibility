@@ -30,8 +30,8 @@ public class AccessibilityScanner {
     public Map<String, Object> runAccessibilityAudit() throws IOException {
         Map<String, Object> auditReport = new HashMap<>();
         driver.manage().window().maximize();
-        js.executeScript(jsFactory.getAccessibilityContent());
-        String accessibilityTests = "var auditConfig = new axs.AuditConfiguration(); "
+        String accessibilityTests = jsFactory.getAccessibilityContent()
+                + "var auditConfig = new axs.AuditConfiguration(); "
                 + "var results = axs.Audit.run(auditConfig);"
                 + "var auditResults = axs.Audit.auditResults(results);"
                 + "var report = axs.Audit.createReport(results);return report";

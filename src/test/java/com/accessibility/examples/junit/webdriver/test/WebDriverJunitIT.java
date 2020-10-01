@@ -2,6 +2,7 @@ package com.accessibility.examples.junit.webdriver.test;
 
 import com.accessibility.AccessibilityScanner;
 import com.accessibility.Result;
+import com.accessibility.examples.cucumber.webdriver.test.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -21,12 +22,9 @@ import java.util.Map;
  */
 public class WebDriverJunitIT {
 
-
     @Test
     public void simpleWebDriverAccessibilityTest() throws IOException {
-
-        WebDriverManager.chromedriver().forceCache().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverProvider.getDriver();
         driver.get("http://www.netflix.com");
 
         AccessibilityScanner scanner = new AccessibilityScanner(driver);
