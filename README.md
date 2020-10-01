@@ -9,7 +9,7 @@ To start using the tool, add dependency like the below (if using Maven), but any
 <dependency>
    <groupId>com.accessibility</groupId>
    <artifactId>webdriver-accessibility</artifactId>
-   <version>1.2.0</version>
+   <version>1.3.0</version>
 </dependency>
 ```
 
