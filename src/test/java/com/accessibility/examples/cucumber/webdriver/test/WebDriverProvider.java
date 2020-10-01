@@ -25,7 +25,7 @@ public class WebDriverProvider implements Provider<WebDriver> {
         }
         String browser = prop.getProperty("browser");
         WebDriver driver;
-        switch(browser.toLowerCase()) {
+        switch (browser.toLowerCase()) {
             case "firefox":
                 WebDriverManager.firefoxdriver().forceCache().setup();
                 driver = new FirefoxDriver();

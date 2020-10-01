@@ -3,11 +3,9 @@ package com.accessibility.examples.junit.webdriver.test;
 import com.accessibility.AccessibilityScanner;
 import com.accessibility.Result;
 import com.accessibility.examples.cucumber.webdriver.test.WebDriverProvider;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -33,19 +31,15 @@ public class WebDriverJunitIT {
         if (audit_report.containsKey("plain_report")) {
             log.warn(audit_report.get("plain_report").toString());
         }
-
         if (audit_report.containsKey("error")) {
             List<Result> errors = (List<Result>) audit_report.get("error");
-
             for (Result error : errors) {
                 log.info(error.getRule());//e.g. AX_TEXT_01 (Controls and media ....
                 log.info(error.getUrl());//e.g. See https://github.com/GoogleChrome/accessibility-developer-tools/wiki....
                 for (String element : error.getElements())
                     log.info(element);//e.g. #myForm > P > INPUT
             }
-
         }
-
         if (audit_report.containsKey("screenshot")) {
             final byte[] screenshot = (byte[]) audit_report
                     .get("screenshot");
@@ -55,5 +49,4 @@ public class WebDriverJunitIT {
         }
         driver.quit();
     }
-
 }
