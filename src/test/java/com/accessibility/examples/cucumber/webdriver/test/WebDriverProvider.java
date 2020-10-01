@@ -1,6 +1,5 @@
 package com.accessibility.examples.cucumber.webdriver.test;
 
-import com.accessibility.examples.junit.webdriver.test.WebDriverJunitIT;
 import com.google.inject.Provider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
@@ -14,7 +13,7 @@ import java.util.Properties;
 
 public class WebDriverProvider implements Provider<WebDriver> {
 
-    private static final Logger log = Logger.getLogger(WebDriverJunitIT.class);
+    private static final Logger log = Logger.getLogger(WebDriverProvider.class);
 
     public static WebDriver getDriver() {
         Properties prop = new Properties();
